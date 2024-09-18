@@ -14,9 +14,13 @@ import time
 
 # Load environment variables and configure API
 load_dotenv()
-google_api_key = os.getenv("AIzaSyA557kuj8o_kSfQSmtYBUKFoX_7dvj_HiQ")
-genai.configure(api_key=os.getenv("AIzaSyA557kuj8o_kSfQSmtYBUKFoX_7dvj_HiQ"))
-os.environ["GOOGLE_API_KEY"] = "AIzaSyA557kuj8o_kSfQSmtYBUKFoX_7dvj_HiQ"
+# Use environment variables for API keys
+google_api_key = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=google_api_key)
+
+#google_api_key = os.getenv("GOOGLE_API_KEY1")
+#genai.configure(api_key=os.getenv("GOOGLE_API_KEY1"))
+#os.environ["GOOGLE_API_KEY"] = "GOOGLE_API_KEY1"
 
 
 # Improved function to check if PDF is scanned
